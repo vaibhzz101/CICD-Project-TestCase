@@ -1,0 +1,11 @@
+on: push
+jobs:
+    fourth-job: 
+       runs-on: ubuntu-latest
+       steps: 
+            - run: node --version
+            - run: npm --version
+            - uses: actions/checkout@v3
+            - run: npm install
+            - run: node index.js
+            - run: npm test . --fix
